@@ -28,7 +28,7 @@ jobs:
 
     # Changes the base-tag in index.html from "/" to match repo subdirectory
     - name: Change base-tag in index.html from / to Whatever Your Project Is Called
-      run: sed -i 's/<base href="\/" \/>/<base href="\/LinfoPersonalPage\/" \/>/g' release/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/linfo-personal-page\/" \/>/g' release/wwwroot/index.html
 
     # Copy index.html to 404.html to account for missing file
     - name: copy index.html to 404.html
