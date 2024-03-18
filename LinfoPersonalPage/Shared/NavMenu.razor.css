@@ -1,4 +1,51 @@
+.banner {
+    text-align: center;
+    padding: 50px;
+    /* Adjust the background color to fit your site's theme */
+    background-color: #f8f9fa;
+}
+
 .navbar {
-    background: rgb(24,189,0);
-    background: linear-gradient(90deg, rgba(24,189,0,1) 23%, rgba(255,238,87,1) 75%);
+    position: relative;
+    background: rgb(129,129,255);
+    background: linear-gradient(90deg, rgba(129,129,255,1) 0%, rgba(207,110,255,1) 49%, rgba(254,228,255,1) 100%);
+    z-index: 1;
+}
+.icon-wrapper {
+    height: 60px; /* Adjust based on your image and desired final size */
+    width: 60px; /* Equal to height for a perfect circle */
+    overflow: hidden; /* Ensures the image does not exceed the circular boundary */
+}
+
+/* Adjustments for the home icon */
+.nav-link.position-relative {
+    padding: 0; /* Remove padding to make circle occupy entire space */
+}
+
+.circle-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #aae8ff;
+    z-index: 1;
+    background-color: rebeccapurple;
+    overflow: hidden;
+}
+
+.icon-wrapper {
+    height: 100%; /* Take full height of parent circle */
+    width: 100%; /* Take full width of parent circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.img-fluid {
+    max-width: 80%; /* Ensure image doesn't overflow */
+    height: auto;
 }

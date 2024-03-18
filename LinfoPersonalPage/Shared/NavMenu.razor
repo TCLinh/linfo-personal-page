@@ -1,31 +1,26 @@
-﻿<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
-      @*   <a class="navbar-brand" href="">BlazingTopMenu</a>
-        <button class="navbar-toggler @NavButtonCssClass" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button> *@
-        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <span class="oi oi-home" aria-hidden="true"></span> Home
-                    </NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="counter">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Counter
-                    </NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="fetchdata">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-                    </NavLink>
-                </li>
-            </ul>
+﻿<div class="banner">
+    <h1>Banner area</h1>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid position-relative">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav d-flex w-100 justify-content-around">
+                <NavLink class="nav-link" href="blog">Blog</NavLink>
+                <NavLink class="nav-link" href="features">Features</NavLink>
+                 <NavLink class="nav-link position-relative" href="" Match="NavLinkMatch.All">
+                    <div class="circle-border">
+                        <div class="icon-wrapper">
+                            <img src="https://static-00.iconduck.com/assets.00/avatar-default-symbolic-icon-479x512-n8sg74wg.png" alt="Your Image" class="img-fluid rounded-circle">
+                        </div>
+                    </div>
+                </NavLink>
+                <NavLink class="nav-link" href="counter">Counter</NavLink>
+                <NavLink class="nav-link" href="fetchdata">Fetch Data</NavLink>
+            </div>
         </div>
     </div>
 </nav>
+
 
 @code {
     private bool collapseNavMenu = true;
