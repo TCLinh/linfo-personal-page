@@ -1,8 +1,7 @@
 .banner {
     text-align: center;
     padding: 50px;
-    /* Adjust the background color to fit your site's theme */
-    background-color: #f8f9fa;
+    color: white;
 }
 
 .navbar {

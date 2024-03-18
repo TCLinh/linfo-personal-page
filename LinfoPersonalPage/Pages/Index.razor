@@ -1,9 +1,19 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<Collapsible Header="About Me" Content="lorem ispum" />
+<Collapsible Header="Skill" Content="lorem ispum 2" >
+    <div>
+        <h3>Another Heading</h3>
+        <ul>
+        <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+</Collapsible>
+<Collapsible Header="Experience" Content="add timeline here" />
+@code {
+    
+}

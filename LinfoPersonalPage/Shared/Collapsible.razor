@@ -1,0 +1,38 @@
+﻿
+<div class="card mt-5">
+    <div class="card-header d-flex justify-content-between" @onclick="ToggleCollapse">
+        <h5 class="mb-0">@Header</h5>
+        <span class="@IconClass" title="@ToggleTitle"></span>
+    </div>
+    <div class="@collapseClass">
+        <div class="card-body">
+            @Content
+            @ChildContent
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string Header { get; set; } = "";
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string Content { get; set; } = "";
+
+    private bool isCollapsed = false;
+
+    private string ToggleTitle => isCollapsed ? "Show More" : "Show Less";
+
+    private string IconClass => isCollapsed ? "oi oi-chevron-bottom" : "oi oi-chevron-top";
+
+    private string collapseClass => isCollapsed ? "collapse" : "";
+
+    private void ToggleCollapse()
+    {
+        isCollapsed = !isCollapsed;
+    }
+}
