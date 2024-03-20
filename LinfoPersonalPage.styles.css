@@ -1,3 +1,21 @@
+/* /Pages/Index.razor.rz.scp.css */
+.card-header[b-4ajqixu5s8] {
+    position: relative;
+    padding: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: black;
+    color: white;
+}
+
+.card-body[b-4ajqixu5s8] {
+    padding: 20px;
+}
+/* /Shared/Collapsible.razor.rz.scp.css */
+.card-header[b-r45j3d9lxl]{
+    background-color: black;
+    color: white;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-esy7gb961q] {
     position: relative;
@@ -7,10 +25,7 @@
 
 main[b-esy7gb961q] {
     flex: 1;
-}
-
-.sidebar[b-esy7gb961q] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: floralwhite;
 }
 
 .top-row[b-esy7gb961q] {
@@ -81,71 +96,53 @@ main[b-esy7gb961q] {
     }
 }
 /* /Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-chc3m48ggo] {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.top-row[b-chc3m48ggo] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand[b-chc3m48ggo] {
-    font-size: 1.1rem;
-}
-
-.oi[b-chc3m48ggo] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
-.nav-item[b-chc3m48ggo] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-chc3m48ggo] {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type[b-chc3m48ggo] {
-        padding-bottom: 1rem;
-    }
-
-    .nav-item[b-chc3m48ggo]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-.nav-item[b-chc3m48ggo]  a.active {
-    background-color: rgba(255,255,255,0.25);
+.banner[b-chc3m48ggo] {
+    text-align: center;
+    padding: 50px;
     color: white;
 }
 
-.nav-item[b-chc3m48ggo]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+.navbar[b-chc3m48ggo] {
+    position: relative;
+    background: rgb(129,129,255);
+    background: linear-gradient(90deg, rgba(129,129,255,1) 0%, rgba(207,110,255,1) 49%, rgba(254,228,255,1) 100%);
+    z-index: 1;
+}
+.icon-wrapper[b-chc3m48ggo] {
+    height: 60px; /* Adjust based on your image and desired final size */
+    width: 60px; /* Equal to height for a perfect circle */
+    overflow: hidden; /* Ensures the image does not exceed the circular boundary */
 }
 
-@media (min-width: 641px) {
-    .navbar-toggler[b-chc3m48ggo] {
-        display: none;
-    }
+/* Adjustments for the home icon */
+.nav-link.position-relative[b-chc3m48ggo] {
+    padding: 0; /* Remove padding to make circle occupy entire space */
+}
 
-    .collapse[b-chc3m48ggo] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-    }
-    
-    .nav-scrollable[b-chc3m48ggo] {
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
-    }
+.circle-border[b-chc3m48ggo] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #aae8ff;
+    z-index: 1;
+    background-color: rebeccapurple;
+    overflow: hidden;
+}
+
+.icon-wrapper[b-chc3m48ggo] {
+    height: 100%; /* Take full height of parent circle */
+    width: 100%; /* Take full width of parent circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.img-fluid[b-chc3m48ggo] {
+    max-width: 80%; /* Ensure image doesn't overflow */
+    height: auto;
 }

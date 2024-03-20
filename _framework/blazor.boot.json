@@ -1,7 +1,7 @@
 {
   "entryAssembly": "LinfoPersonalPage",
   "resources": {
-    "hash": "sha256-HASMC4aPsx/UYQTwuUDKERIxYTvzCTd1EB3tntmCA0U=",
+    "hash": "sha256-4+iryMzAmmtO2owToHCaT62szCSHEYMKSg5Ul35fFJQ=",
     "runtime": {
       "dotnet.7.0.16.i1aadeothk.js": "sha256-4BiArKugJJtpQrznGF5zWfmJ2TB98+p6rKsyoqhtMk4=",
       "dotnet.timezones.blat": "sha256-rwyJqJu36keQwNmm/O1XV7tnkkVldIOK8GIjn4gTUt4=",
@@ -11,7 +11,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "LinfoPersonalPage.dll": "sha256-WR2KpIjP48/C/D6KaOER+u+Hr/h6cf9MzyLtLLdTnWI=",
+      "LinfoPersonalPage.dll": "sha256-S84DmsYI3OHX9H7/c1gejY5mz50Q7f6C366YBobrWZ4=",
       "Microsoft.AspNetCore.Components.dll": "sha256-qherFzOyTPRftkdrm5xIlq5Ixibmon8Yq5JdsWu1wUY=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-DV2utlSfbmk5eCmk2ZrF9LHaRiIPH7IPu9KpQSHWaFM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-I3hivE2GUCLdJhJ9KPcDlOvhCiiPRvVPj+IRM0sgm8o=",
