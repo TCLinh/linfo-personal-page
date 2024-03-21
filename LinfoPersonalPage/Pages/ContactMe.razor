@@ -1,0 +1,34 @@
+﻿@using Model
+@inject HttpClient Http
+
+@page "/contactme"
+
+<div class="row mt-5">
+    @foreach (var contact in contactMe)
+    {
+        @if (contact != null)
+        {
+            <div class="col-md-6 text-center">
+                <h5>@contact.location</h5>
+            </div>
+            <div class="col-md-6 text-start">
+                <a href="@contact.url">@contact.url</a>
+            </div>
+        }
+        
+    }
+</div>
+
+@code {
+    public List<ContactMeModel> contactMe { get; set; } = new List<ContactMeModel>();
+    protected override async Task OnInitializedAsync()
+    {
+        PersonalDetailsModel? personalDetails = await Http.GetFromJsonAsync<PersonalDetailsModel>("sample-data/personal_info_en.json");
+
+        if (personalDetails != null)
+        {
+            contactMe = personalDetails.contact_me;
+
+        }
+    }
+}

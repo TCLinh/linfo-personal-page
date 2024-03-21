@@ -1,19 +1,55 @@
-﻿@page "/"
+﻿@using Model
+@using Helper
+@inject HttpClient Http
+
+@page "/"
 
 <PageTitle>Home</PageTitle>
 
-<Collapsible Header="About Me" Content="lorem ispum" />
-<Collapsible Header="Skill" Content="lorem ispum 2" >
-    <div>
-        <h3>Another Heading</h3>
-        <ul>
-        <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-4 text-center mr-5">
+        <h2>@personalDetails?.full_name</h2>
+        <h4>(@personalDetails?.alias)</h4>
+        @personalDetails?.dob
     </div>
+</div>
+<Collapsible Header="About Me" Content=@personalDetails?.about_me />
+<Collapsible Header="Skill">
+   
+        @foreach(var skillType in Constant.SKILL_TYPES)
+        {
+             <div class="mt-3">
+                <h5>@skillType</h5>
+            <div class="row d-flex justify-content-between mt-2">
+                    @if (personalDetails?.skills != null && personalDetails.skills.Any())
+                    {
+                        var skillFiltered = personalDetails.skills.Where(x => x.skill_type == skillType);
+                        @foreach (var skill in skillFiltered)
+                        {
+                            <div class="col-md-4">
+                                @skill.skill_name
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h4>TBU</h4>
+                    }
+                </div>
+            
+            </div>
+        }
+       
 </Collapsible>
-<Collapsible Header="Experience" Content="add timeline here" />
+<Collapsible Header="Experience">
+    <Timeline workExperience=@personalDetails?.work_experience />
+</Collapsible>
+
 @code {
+    private PersonalDetailsModel? personalDetails = new PersonalDetailsModel();
+    protected override async Task OnInitializedAsync()
+    {
+        personalDetails = await Http.GetFromJsonAsync<PersonalDetailsModel>("sample-data/personal_info_en.json");
+    }
     
 }

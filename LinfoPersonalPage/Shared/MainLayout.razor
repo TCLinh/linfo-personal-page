@@ -1,9 +1,14 @@
-﻿@inherits LayoutComponentBase
+﻿@using MudBlazor
+@inherits LayoutComponentBase
 
 <PageTitle>Linfo</PageTitle>
 
 <NavMenu />
 
-<main class="container p-5 border-bottom-0 rounded-bottom">
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<main class="container p-5 border-top-0 rounded-bottom">
     @Body
 </main>

@@ -1,0 +1,31 @@
+﻿@using MudBlazor
+@using Model
+
+
+<MudTimeline>
+    @foreach (var workExp in workExperience)
+    {
+        @if (workExp != null)
+        {
+            <MudTimelineItem Color="Color.Primary">
+                <ItemOpposite>
+                        <MudText Color="Color.Info" Typo="Typo.h5">@workExp?.start_time - @workExp?.end_time</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">@workExp.company_name</MudText>
+                    <MudText>@workExp.work_description</MudText>
+                </ItemContent>
+
+            </MudTimelineItem>
+        
+        }
+        
+    }
+    
+</MudTimeline>
+
+@code {
+    [Parameter]
+    public List<WorkExperienceModel> workExperience { get; set; } = new List<WorkExperienceModel>();
+
+}
