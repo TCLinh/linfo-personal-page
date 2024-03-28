@@ -1,0 +1,62 @@
+{
+	"full_name": "Someone",
+	"alias": "Something",
+	"dob": "1997-01-01",
+	"about_me": "This is a placeholder for something far bigger",
+	"contact_me":
+	[
+		{
+			"location": "Email",
+			"url": "thisemail@gmail.com"
+		},
+		{
+			"location": "LinkedIn",
+			"url": "https://vn.linkedin.com/"
+		},
+		{
+			"location": "GitHub",
+			"url": "https://github.com/totally-real-gh"
+		}
+	],
+	"skills": [
+		{
+			"skill_name": "Eating",
+			"skill_level": 5,
+			"skill_type": "TECHNICAL"
+		},
+		{
+			"skill_name": "Drinking",
+			"skill_level": 1,
+			"skill_type": "TECHNICAL"
+		},
+		{
+			"skill_name": "Tasting",
+			"skill_level": 2,
+			"skill_type": "TECHNICAL"
+		},
+		{
+			"skill_name": "Sleeping",
+			"skill_level": 1,
+			"skill_type": "LANGUAGE"
+		},
+		{
+			"skill_name": "Dreaming",
+			"skill_level": 1,
+			"skill_type": "LANGUAGE"
+		},
+		{
+			"skill_name": "Walking",
+			"skill_level": 1,
+			"skill_type": "SOFT"
+		}
+	],
+	"work_experience": [
+		{
+			"start_time": "2020-08-03",
+			"end_time": "now",
+			"company_name": "New Comp?",
+			"title": "New Comp watcher",
+			"work_description": "I watched and I watched and I watched and I watched"
+		}
+	]
+}
