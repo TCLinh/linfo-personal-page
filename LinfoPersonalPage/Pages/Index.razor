@@ -6,7 +6,7 @@
 
 <PageTitle>Home</PageTitle>
 
-<div class="row d-flex justify-content-center">
+@* <div class="row d-flex justify-content-center">
     <div class="col-md-4 text-center mr-5">
         <h2>@personalDetails?.full_name</h2>
         <h4>(@personalDetails?.alias)</h4>
@@ -44,7 +44,7 @@
 <Collapsible Header="Experience">
     <Timeline workExperience=@personalDetails?.work_experience />
 </Collapsible>
-
+ *@
 @code {
     private PersonalDetailsModel? personalDetails = new PersonalDetailsModel();
     protected override async Task OnInitializedAsync()

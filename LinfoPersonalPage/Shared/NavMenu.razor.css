@@ -1,50 +1,45 @@
-.banner {
+body, html {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    display: table;
+    width: 100px;
     text-align: center;
-    padding: 50px;
-    color: white;
 }
 
-.navbar {
+li {
+    display: table-cell;
     position: relative;
-    background: rgb(129,129,255);
-    background: linear-gradient(90deg, rgba(129,129,255,1) 0%, rgba(207,110,255,1) 49%, rgba(254,228,255,1) 100%);
-    z-index: 1;
-}
-.icon-wrapper {
-    height: 60px; /* Adjust based on your image and desired final size */
-    width: 60px; /* Equal to height for a perfect circle */
-    overflow: hidden; /* Ensures the image does not exceed the circular boundary */
+    padding: 15px 0;
 }
 
-/* Adjustments for the home icon */
-.nav-link.position-relative {
-    padding: 0; /* Remove padding to make circle occupy entire space */
+a {
+    color: gold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
 }
 
-.circle-border {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 6px solid #aae8ff;
-    z-index: 1;
-    background-color: rebeccapurple;
-    overflow: hidden;
-}
+    a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: gold;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
 
-.icon-wrapper {
-    height: 100%; /* Take full height of parent circle */
-    width: 100%; /* Take full width of parent circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure image doesn't overflow */
-}
-
-.img-fluid {
-    max-width: 80%; /* Ensure image doesn't overflow */
-    height: auto;
-}
+    a:hover:after {
+        width: 100%;
+        left: 0;
+    }
