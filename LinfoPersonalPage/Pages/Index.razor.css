@@ -1,12 +1,7 @@
-﻿.card-header {
-    position: relative;
-    padding: 20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: black;
-    color: white;
-}
-
-.card-body {
-    padding: 20px;
+﻿.svg-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 500px;
+    height: 100%;
 }
