@@ -2,6 +2,73 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 500px;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.ring-three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    width: auto;
+    position: relative;
+    transform: translate(20%,-20%);
+    opacity: 70%;
+}
+
+.ring-three-img {
+    max-width: 100%;
+    max-height: 100%;
     height: 100%;
+    object-fit: contain;
+    stroke-width: 2px;
+    animation: spin 10s linear infinite;
+}
+
+.ring-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+    position: absolute;
+}
+
+.ring-two-img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    object-fit: contain;
+    stroke-width: 2px;
+    animation: spin 15s linear infinite reverse;
+}
+
+.ring-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: auto;
+    position: absolute;
+}
+
+.ring-one-img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    object-fit: contain;
+    stroke-width: 2px;
+    animation: spin 20s linear infinite;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
