@@ -1,3 +1,22 @@
+.body {
+    background: rgb(61,20,87);
+    background: linear-gradient(180deg, rgba(61,20,87,1) 48%, rgba(74,38,120,1) 61%, rgba(124,68,160,1) 74%, rgba(135,82,174,1) 88%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    color: gold;
+    padding: 50px;
+}
+
+.content {
+    width: 80%;
+}
+
 /*.page {
     position: relative;
     display: flex;

@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    background-color: #302846; /* Set background color to black */
+    background: rgb(61,20,87);
 }
 
 h1:focus {

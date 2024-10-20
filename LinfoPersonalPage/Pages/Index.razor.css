@@ -1,12 +1,63 @@
-﻿.card-header {
-    position: relative;
-    padding: 20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: black;
-    color: white;
+﻿.personal-info {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
 }
 
-.card-body {
-    padding: 20px;
+.avatar-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid gold;
+    object-fit: cover;
+}
+
+.personal-content {
+    align-content: center;
+    gap: 10px;
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+}
+
+    .about-me .about-me-content {
+        width: 80%;
+        text-align: center;
+        font-size: 20px;
+        white-space: pre-line;
+    }
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+    .title img {
+        width: 80px;
+        align-self: flex-start;
+        padding-bottom: 20px;
+    }
+    .title .title-container {
+        width: 40%;
+        border-bottom: 1px solid gold;
+        align-self: flex-end;
+    }
+
+.skill-type {
+    border-right: 1px solid gold;
+    align-content:center;
+    width: 30%;
+}
+
+.skill-list {
+    width: 70%;
+}
+
+.skill {
+    font-size: 20px;
 }

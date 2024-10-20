@@ -7,15 +7,14 @@
     {
         @if (workExp != null)
         {
-            <MudTimelineItem Color="Color.Primary">
+            <MudTimelineItem Color="Color.Warning">
                 <ItemOpposite>
-                        <MudText Color="Color.Info" Typo="Typo.h5">@workExp?.start_time - @workExp?.end_time</MudText>
+                    <MudText Typo="Typo.h5">@workExp.start_time - @workExp.end_time</MudText>
                 </ItemOpposite>
                 <ItemContent>
-                    <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">@workExp.company_name</MudText>
+                    <MudText Typo="Typo.h6" GutterBottom="true">@workExp.company_name</MudText>
                     <MudText>@workExp.work_description</MudText>
                 </ItemContent>
-
             </MudTimelineItem>
         
         }

@@ -6,50 +6,125 @@
 
 <PageTitle>Home</PageTitle>
 
-@* <div class="row d-flex justify-content-center">
-    <div class="col-md-4 text-center mr-5">
-        <h2>@personalDetails?.full_name</h2>
-        <h4>(@personalDetails?.alias)</h4>
-        @personalDetails?.dob
+
+<div class="personal-info">
+    <div class="avatar-container">
+        <img src="/img/avatar.jpg" alt="avatar"/>
+    </div>
+   
+    <div class="personal-content">
+        <MudText Typo="Typo.h3" Align="Align.End">
+            Hello, I am <span style="color:lemonchiffon">@displayedTitle</span>
+            <span style="visibility:@(isCursorVisible ? "visible" : "hidden"); color:lemonchiffon">_</span>
+        </MudText>
+        <MudText Typo="Typo.h4" Align="Align.End" class="pr-10">@personalDetails?.full_name</MudText>
+        <MudText Typo="Typo.h4" Align="Align.End">@personalDetails?.dob</MudText>
     </div>
 </div>
-<Collapsible Header="About Me" Content=@personalDetails?.about_me />
-<Collapsible Header="Skill">
-   
-        @foreach(var skillType in Constant.SKILL_TYPES)
-        {
-             <div class="mt-3">
-                <h5>@skillType</h5>
-            <div class="row d-flex justify-content-between mt-2">
-                    @if (personalDetails?.skills != null && personalDetails.skills.Any())
-                    {
-                        var skillFiltered = personalDetails.skills.Where(x => x.skill_type == skillType);
-                        @foreach (var skill in skillFiltered)
+
+<div class="about-me">
+    <div class="about-me-content">
+        @personalDetails?.about_me
+    </div>
+</div>
+
+<div class="mt-5">
+    <div class="title">
+        <img src="img/sparkle.png" />
+        <div class="title-container">
+            <MudText Typo="Typo.h4" class="p-2">Skills</MudText>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column w-100">
+            @foreach (var skillType in Constant.SKILL_TYPES)
+            {
+                <div class="d-flex flex-row mt-5">
+                    <div class="skill-type">
+                        <MudText Typo="Typo.h5" Align="Align.Center" class="p-2">@skillType</MudText>
+                    </div>
+                    <div class="skill-list d-flex flex-column align-content-center pl-10">
+                        @if (personalDetails?.skills != null && personalDetails.skills.Any())
                         {
-                            <div class="col-md-4">
-                                @skill.skill_name
-                            </div>
+                            var skillFiltered = personalDetails.skills.Where(x => x.skill_type == skillType);
+                            @foreach (var skill in skillFiltered)
+                            {
+                                <div class="row mt-2">
+                                    <div class="skill col-2">
+                                        @skill.skill_name
+                                    </div>
+                                    <div class="skill col-8">
+                                        @skill.skill_level YOE
+                                    </div>
+                                </div>
+                            }
                         }
-                    }
-                    else
-                    {
-                        <h4>TBU</h4>
-                    }
+                    </div>
                 </div>
-            
-            </div>
-        }
-       
-</Collapsible>
-<Collapsible Header="Experience">
-    <Timeline workExperience=@personalDetails?.work_experience />
-</Collapsible>
- *@
+            }
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <div class="title">
+        <img src="img/sparkle.png" />
+        <div class="title-container">
+            <MudText Typo="Typo.h4" class="p-2">Work Experience</MudText>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <Timeline workExperience=@personalDetails?.work_experience />
+    </div>
+</div>
+
 @code {
     private PersonalDetailsModel? personalDetails = new PersonalDetailsModel();
     protected override async Task OnInitializedAsync()
     {
         personalDetails = await Http.GetFromJsonAsync<PersonalDetailsModel>("sample-data/personal_info_en.json");
+
+        var typingTask = StartTypingEffect();
+        var cursorTask = BlinkCursor();
+
+        await Task.WhenAll(typingTask, cursorTask);
     }
     
+    private string[] titles = { "a Programmer", "a Developer", "an Art Hobbyist", "an Animal Enthusiast", "a Collector" };
+    private string displayedTitle = "";
+    private int currentWordIndex = 0;
+    private bool isCursorVisible = true;
+
+    private async Task StartTypingEffect()
+    {
+        while (true)
+        {
+            string currentWord = titles[currentWordIndex];
+            displayedTitle = "";
+
+            // Typing each character
+            foreach (char letter in currentWord)
+            {
+                displayedTitle += letter;
+                StateHasChanged(); // Update UI after adding each letter
+                await Task.Delay(100);
+            }
+
+            // Pause after typing the word
+            await Task.Delay(2000);
+
+            // Move to the next word
+            currentWordIndex = (currentWordIndex + 1) % titles.Length;
+        }
+    }
+
+    private async Task BlinkCursor()
+    {
+        while (true)
+        {
+            isCursorVisible = !isCursorVisible;
+            StateHasChanged();
+            await Task.Delay(500);
+        }
+    }
 }
