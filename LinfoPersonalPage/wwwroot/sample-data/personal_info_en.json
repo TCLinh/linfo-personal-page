@@ -2,22 +2,10 @@
 	"full_name": "Someone",
 	"alias": "Something",
 	"dob": "1997-01-01",
+	"email": "thisemail@gmail.com",
+	"linkedin": "https://vn.linkedin.com/",
+	"github": "https://github.com/totally-real-gh",
 	"about_me": "From the moment I understood the weakness of my flesh, it disgusted me. I craved the strength and certainty of steel. I aspired to the purity of the Blessed Machine.\nYour kind cling to your flesh, as though it will not decay and fail you. One day the crude biomass you call the temple will wither, and you will beg my kind to save you.\nBut I am already saved, for the Machine is immortal...\n...even in death I serve the Omnissiah.",
-	"contact_me":
-	[
-		{
-			"location": "Email",
-			"url": "thisemail@gmail.com"
-		},
-		{
-			"location": "LinkedIn",
-			"url": "https://vn.linkedin.com/"
-		},
-		{
-			"location": "GitHub",
-			"url": "https://github.com/totally-real-gh"
-		}
-	],
 	"skills": [
 		{
 			"skill_name": "Eating",

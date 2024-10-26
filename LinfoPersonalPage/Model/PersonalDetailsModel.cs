@@ -8,7 +8,6 @@
             alias= null;
             dob= null;
             about_me = null;
-            contact_me = new List<ContactMeModel>();
             skills = new List<SkillsModel>();
             work_experience= new List<WorkExperienceModel>();
         }
@@ -21,7 +20,11 @@
 
         public string? about_me { get; set; }
 
-        public List<ContactMeModel>? contact_me { get; set; }
+        public string? email { get; set; }
+
+        public string? linkedin { get; set; }
+
+        public string? github { get; set; }
 
         public List<SkillsModel>? skills { get; set; }
 
