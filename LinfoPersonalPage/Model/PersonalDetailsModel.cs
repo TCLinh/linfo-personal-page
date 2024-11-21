@@ -10,6 +10,7 @@
             about_me = null;
             skills = new List<SkillsModel>();
             work_experience= new List<WorkExperienceModel>();
+            education = new List<EducationModel>();
         }
 
         public string? full_name { get; set; }
@@ -29,6 +30,8 @@
         public List<SkillsModel>? skills { get; set; }
 
         public List<WorkExperienceModel>? work_experience { get; set; }
+
+        public List<EducationModel>? education { get; set; }
 
     }
 }

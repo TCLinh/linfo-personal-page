@@ -1,5 +1,6 @@
 ﻿@using Model
 @using Helper
+@using System.Text;
 @inject HttpClient Http
 
 @page "/"
@@ -95,6 +96,18 @@
     </div>
 </div>
 
+@*<div class="mt-5">
+    <div class="title">
+        <img src="img/sparkle.png" />
+        <div class="title-container">
+            <MudText Typo="Typo.h4" class="p-2" Align="Align.Center">Degrees &Aacute; Certifications</MudText>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        TBU when I actually have certs that arent just uni diploma
+    </div>
+</div>*@
+
 @code {
     [Inject] IJSRuntime JS { get; set; }
 
@@ -109,7 +122,7 @@
         await Task.WhenAll(typingTask, cursorTask);
     }
     
-    private string[] titles = { "a Programmer", "a Developer", "an Art Hobbyist", "an Animal Enthusiast", "a Collector" };
+    private string[] titles = { "a Programmer", "a Developer", "a Thinker", "an Art Hobbyist", "an Animal Enthusiast" };
     private string displayedTitle = "";
     private int currentWordIndex = 0;
     private bool isCursorVisible = true;
@@ -119,18 +132,32 @@
         while (true)
         {
             string currentWord = titles[currentWordIndex];
-            displayedTitle = "";
+            var displayedTitleBuilder = new StringBuilder();
 
             // Typing each character
             foreach (char letter in currentWord)
             {
-                displayedTitle += letter;
+                displayedTitleBuilder.Append(letter);
+                displayedTitle = displayedTitleBuilder.ToString();
+
                 StateHasChanged(); // Update UI after adding each letter
                 await Task.Delay(100);
             }
 
             // Pause after typing the word
             await Task.Delay(2000);
+
+            // Deleting each character
+            for (int i = currentWord.Length - 1; i >= 0; i--)
+            {
+                displayedTitleBuilder.Remove(i, 1);
+                displayedTitle = displayedTitleBuilder.ToString();
+
+                StateHasChanged();
+                await Task.Delay(50);
+            }
+
+            await Task.Delay(500);
 
             // Move to the next word
             currentWordIndex = (currentWordIndex + 1) % titles.Length;

@@ -41,10 +41,25 @@
 	"work_experience": [
 		{
 			"start_time": "2020-08-03",
+			"end_time": "2024-12-31",
+			"company_name": "First Comp",
+			"title": "First Comp watcher",
+			"work_description": "I watched and I watched and I watched and I watched"
+		},
+		{
+			"start_time": "2025-01-06",
 			"end_time": "now",
 			"company_name": "New Comp?",
 			"title": "New Comp watcher",
 			"work_description": "I watched and I watched and I watched and I watched"
+		}
+	],
+	"education": [
+		{
+			"start_time": "2016",
+			"end_time": "2020",
+			"name": "University",
+			"degree": "Bachelor in CompSci"
 		}
 	]
 }
